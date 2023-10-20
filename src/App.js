@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
 function SecondsCounter() {
@@ -14,11 +15,28 @@ function SecondsCounter() {
   }, []); // El segundo argumento del useEffect es un array vacío para que se ejecute solo una vez al montar el componente
 
   // Limita el contador a 6 dígitos y agrega un símbolo de reloj
-  const formattedSeconds = `⏰  ${('000000' + segundos).slice(-6)}`;
+  const formattedSeconds = `${('000000' + segundos).slice(-6)}`;
 
   return (
-    <div>
-      <h1>{formattedSeconds}</h1>
+    <div className='row'>
+      <div className="col">
+            <div className="card">
+              <div className="card-body">
+                ⏰
+              </div>
+            </div>
+          </div>
+       {
+        formattedSeconds.toString().split('').map(digito => (
+          <div className="col" key={digito}>
+            <div className="card">
+              <div className="card-body">
+                {digito}
+              </div>
+            </div>
+          </div>
+        ))
+      }
     </div>
   );
 }
