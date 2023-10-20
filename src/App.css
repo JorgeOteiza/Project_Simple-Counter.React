@@ -3,9 +3,16 @@
   background-color: black;
   color: white;
   padding: 15px;
-  font-size: 30px;
+  font-size: 60px;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 150px;
+}
+
+.card {
+  width: 60px;
+  color: white;
+  background-color: hsla(0, 0%, 2%, 0.965);
 }
